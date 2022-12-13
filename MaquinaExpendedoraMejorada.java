@@ -11,6 +11,13 @@ public class MaquinaExpendedoraMejorada {
     // El destino del billete
     private String estacionDestino;
     
+    public MaquinaExpendedoraMejorada() {
+        precioBillete = 4;
+        balanceClienteActual = 0;
+        totalDineroAcumulado = 0;
+        estacionOrigen = "Leon";
+        estacionDestino = "Astorga";
+    }
    
     /**
      * Crea una maquina expendedora de billetes de tren con el 
