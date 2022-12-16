@@ -70,6 +70,8 @@ public class MaquinaExpendedoraMejorada {
         return vaciarDineroDeLaMaquina;
     }
     
+    public int getNumeroBilletesVendidos;
+        
     /**
      * Imprime un billete para el cliente actual
      */
@@ -89,12 +91,16 @@ public class MaquinaExpendedoraMejorada {
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
+            getNumeroBilletesVendidos= getNumeroBilletesVendidos + 1;
+             
         }
         else {
             System.out.println("necesitas " + cantidadDeDineroQueFalta + " euros mas");   
         }            
     }
-    
+    public void getNumeroBilletesVendidos(){
+        System.out.println(getNumeroBilletesVendidos + " billetes vendidos");
+    }
     /**
      * Cancela la operacion de compra del cliente actual y le
      * devuelve al cliente el dinero que ha introducido hasta el momento
