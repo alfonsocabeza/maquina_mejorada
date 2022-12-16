@@ -11,13 +11,17 @@ public class MaquinaExpendedoraMejorada {
     // El destino del billete
     private String estacionDestino;
     
+    private boolean premioVeinticinco;
+    
     public int numeroBilletesVendidos;
-    public MaquinaExpendedoraMejorada() {
+    public MaquinaExpendedoraMejorada(boolean trueofalse) {
         precioBillete = 4;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
+        premioVeinticinco = trueofalse;
         estacionOrigen = "Leon";
         estacionDestino = "Astorga";
+        
     }
    
     /**
@@ -25,11 +29,12 @@ public class MaquinaExpendedoraMejorada {
      * precio del billete y el origen y destino dados. Se asume que el precio
      * del billete que se recibe es mayor que 0.
      */
-    public MaquinaExpendedoraMejorada(int precioDelBillete, String origen, String destino) {
+    public MaquinaExpendedoraMejorada(int precioDelBillete, String origen, String destino, boolean trueofalse) {
         precioBillete = precioDelBillete;
         balanceClienteActual = 0;
         numeroBilletesVendidos = 0;
         totalDineroAcumulado = 0;
+        premioVeinticinco = trueofalse;
         estacionOrigen = origen;
         estacionDestino = destino;
     }
@@ -86,7 +91,7 @@ public class MaquinaExpendedoraMejorada {
             System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
             System.out.println("# " + precioBillete + " euros.");
             System.out.println("##################");
-            System.out.println();         
+            System.out.println("has recibido un descuento de un 25% para el corte ingles");         
     
             // Actualiza el total de dinero acumulado en la maquina
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
