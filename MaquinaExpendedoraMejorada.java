@@ -76,7 +76,6 @@ public class MaquinaExpendedoraMejorada {
         return vaciarDineroDeLaMaquina;
     }
     
-    
         
     /**
      * Imprime un billete para el cliente actual
@@ -91,14 +90,16 @@ public class MaquinaExpendedoraMejorada {
             System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
             System.out.println("# " + precioBillete + " euros.");
             System.out.println("##################");
-            System.out.println("has recibido un descuento de un 25% para el corte ingles");         
+            System.out.println();         
     
             // Actualiza el total de dinero acumulado en la maquina
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
             numeroBilletesVendidos= numeroBilletesVendidos +1;
-             
+             if (premioVeinticinco = true){
+                 System.out.println("has recibido " + (precioBillete*0.25) + "€");
+             }
         }
         else {
             System.out.println("necesitas " + cantidadDeDineroQueFalta + " euros mas");   
