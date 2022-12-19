@@ -87,7 +87,6 @@ public class MaquinaExpendedoraMejorada {
         public void imprimirBillete() {
         int cantidadDeDineroQueFalta;
         int cuenta;
-        cuenta = cuentaPremio;
         cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
         if (numeroBilletesVendidos < numeroMaximoBillete){
             if (cantidadDeDineroQueFalta <= 0) {        
@@ -103,8 +102,8 @@ public class MaquinaExpendedoraMejorada {
                 // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 numeroBilletesVendidos= numeroBilletesVendidos +1;
-                cuentaPremio= cuenta -1;
-                if (premioVeinticinco == true & cuenta == 0) {
+                cuentaPremio= cuentaPremio -1;
+                if (premioVeinticinco == true & cuentaPremio == 0) {
                      System.out.println("has recibido " + (precioBillete*0.25)+ "€");
                      cuentaPremio=4;
                 }
