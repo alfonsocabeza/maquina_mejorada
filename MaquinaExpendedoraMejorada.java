@@ -72,10 +72,10 @@ public class MaquinaExpendedoraMejorada {
     public int vaciarDineroDeLaMaquina(){
         int vaciarDineroDeLaMaquina= balanceClienteActual + totalDineroAcumulado;
             if (balanceClienteActual > 0) {
-            vaciarDineroDeLaMaquina = -1;
+                vaciarDineroDeLaMaquina = -1;
             }
             else{
-            totalDineroAcumulado = 0;
+                totalDineroAcumulado = 0;
             }
             return vaciarDineroDeLaMaquina;
     }
@@ -84,7 +84,7 @@ public class MaquinaExpendedoraMejorada {
     /**
      * Imprime un billete para el cliente actual
      */
-    public void imprimirBillete() {
+        public void imprimirBillete() {
         int cantidadDeDineroQueFalta;
         cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
         if (numeroBilletesVendidos < numeroMaximoBillete){
@@ -102,35 +102,35 @@ public class MaquinaExpendedoraMejorada {
                 // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 numeroBilletesVendidos= numeroBilletesVendidos +1;
-                    if (premioVeinticinco == true) {
-                    System.out.println("has recibido " + (precioBillete*0.25) + "€");
-                    }
-                    else{
+                if (premioVeinticinco == true) {
+                     System.out.println("has recibido " + (precioBillete*0.25) + "€");
+                }
+                else{
                     System.out.println(); 
-                    }
+                }
             }
             else {
-            System.out.println("necesitas " + cantidadDeDineroQueFalta + " euros mas");   
+                System.out.println("necesitas " + cantidadDeDineroQueFalta + " euros mas");   
             }  
         }
         else{
             System.out.println("ya no puedes imprimir mas billetes");
         }
-}
-public void imprimirNumeroBilletesVendidos(){
+    }   
+    public void imprimirNumeroBilletesVendidos(){
         System.out.println(numeroBilletesVendidos + " billetes vendidos");
-}
-public int getNumeroBilletesVendidos(){
+    }
+    public int getNumeroBilletesVendidos(){
         return numeroBilletesVendidos;
-}
-/**
-* Cancela la operacion de compra del cliente actual y le
-* devuelve al cliente el dinero que ha introducido hasta el momento
-*/
-public int cancelarOperacionYDevolverDinero() {
-    int cantidadDeDineroADevolver;
-    cantidadDeDineroADevolver = balanceClienteActual;
-    balanceClienteActual = 0;
-    return cantidadDeDineroADevolver;
+    }
+    /**
+    * Cancela la operacion de compra del cliente actual y le
+    * devuelve al cliente el dinero que ha introducido hasta el momento
+    */
+    public int cancelarOperacionYDevolverDinero() {
+        int cantidadDeDineroADevolver;
+        cantidadDeDineroADevolver = balanceClienteActual;
+        balanceClienteActual = 0;
+        return cantidadDeDineroADevolver;
     } 
 }
