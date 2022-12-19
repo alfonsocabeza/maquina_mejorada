@@ -71,13 +71,13 @@ public class MaquinaExpendedoraMejorada {
     
     public int vaciarDineroDeLaMaquina(){
         int vaciarDineroDeLaMaquina= balanceClienteActual + totalDineroAcumulado;
-        if (balanceClienteActual > 0) {
+            if (balanceClienteActual > 0) {
             vaciarDineroDeLaMaquina = -1;
-        }
-        else{
+            }
+            else{
             totalDineroAcumulado = 0;
-        }
-        return vaciarDineroDeLaMaquina;
+            }
+            return vaciarDineroDeLaMaquina;
     }
     
         
@@ -102,13 +102,12 @@ public class MaquinaExpendedoraMejorada {
                 // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 numeroBilletesVendidos= numeroBilletesVendidos +1;
-                if (premioVeinticinco == true) {
-                 System.out.println("has recibido " + (precioBillete*0.25) + "€");
-                }
-                else{
-                 System.out.println(); 
-                 
-                }
+                    if (premioVeinticinco == true) {
+                    System.out.println("has recibido " + (precioBillete*0.25) + "€");
+                    }
+                    else{
+                    System.out.println(); 
+                    }
         }
         else {
             System.out.println("necesitas " + cantidadDeDineroQueFalta + " euros mas");   
