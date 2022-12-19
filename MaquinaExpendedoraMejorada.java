@@ -14,7 +14,7 @@ public class MaquinaExpendedoraMejorada {
     private boolean premioVeinticinco;
     
     private int numeroMaximoBillete;
-    
+    public int cuentaPremio;
     public int numeroBilletesVendidos;
     public MaquinaExpendedoraMejorada(boolean trueofalse, int billetes) {
         precioBillete = 4;
@@ -24,7 +24,7 @@ public class MaquinaExpendedoraMejorada {
         estacionOrigen = "Leon";
         numeroMaximoBillete = billetes;
         estacionDestino = "Astorga";
-        
+        cuentaPremio = 4;
     }
    
     /**
@@ -68,7 +68,7 @@ public class MaquinaExpendedoraMejorada {
             System.out.println(cantidadIntroducida + "ya no puedes introducir mas dinero");
         }        
     }
-    
+   
     public int vaciarDineroDeLaMaquina(){
         int vaciarDineroDeLaMaquina= balanceClienteActual + totalDineroAcumulado;
             if (balanceClienteActual > 0) {
@@ -86,6 +86,8 @@ public class MaquinaExpendedoraMejorada {
      */
         public void imprimirBillete() {
         int cantidadDeDineroQueFalta;
+        int cuenta;
+        cuenta = cuentaPremio;
         cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
         if (numeroBilletesVendidos < numeroMaximoBillete){
             if (cantidadDeDineroQueFalta <= 0) {        
@@ -95,15 +97,16 @@ public class MaquinaExpendedoraMejorada {
                 System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
                 System.out.println("# " + precioBillete + " euros.");
                 System.out.println("##################");
-                System.out.println();         
-    
+                System.out.println();            
                 // Actualiza el total de dinero acumulado en la maquina
                 totalDineroAcumulado = totalDineroAcumulado + precioBillete;
                 // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 numeroBilletesVendidos= numeroBilletesVendidos +1;
-                if (premioVeinticinco == true & numeroBilletesVendidos == 4) {
-                     System.out.println("has recibido " + (precioBillete*0.25) + "€");
+                cuentaPremio= cuenta -1;
+                if (premioVeinticinco == true & cuenta == 0) {
+                     System.out.println("has recibido " + (precioBillete*0.25)+ "€");
+                     cuentaPremio=4;
                 }
                 else{
                     System.out.println(); 
