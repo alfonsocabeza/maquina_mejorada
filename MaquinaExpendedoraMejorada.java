@@ -108,12 +108,12 @@ public class MaquinaExpendedoraMejorada {
                     else{
                     System.out.println(); 
                     }
-        }
-        else {
+            }
+            else {
             System.out.println("necesitas " + cantidadDeDineroQueFalta + " euros mas");   
-        }  
-    }
-    else{
+            }  
+        }
+        else{
             System.out.println("ya no puedes imprimir mas billetes");
         }
 }
