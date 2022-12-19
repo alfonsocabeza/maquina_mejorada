@@ -118,20 +118,20 @@ public class MaquinaExpendedoraMejorada {
             System.out.println("ya no puedes imprimir mas billetes");
         }
 }
-    public void imprimirNumeroBilletesVendidos(){
+public void imprimirNumeroBilletesVendidos(){
         System.out.println(numeroBilletesVendidos + " billetes vendidos");
-    }
-    public int getNumeroBilletesVendidos(){
+}
+public int getNumeroBilletesVendidos(){
         return numeroBilletesVendidos;
-    }
-    /**
-     * Cancela la operacion de compra del cliente actual y le
-     * devuelve al cliente el dinero que ha introducido hasta el momento
-     */
-    public int cancelarOperacionYDevolverDinero() {
-        int cantidadDeDineroADevolver;
-        cantidadDeDineroADevolver = balanceClienteActual;
-        balanceClienteActual = 0;
-        return cantidadDeDineroADevolver;
+}
+/**
+* Cancela la operacion de compra del cliente actual y le
+* devuelve al cliente el dinero que ha introducido hasta el momento
+*/
+public int cancelarOperacionYDevolverDinero() {
+    int cantidadDeDineroADevolver;
+    cantidadDeDineroADevolver = balanceClienteActual;
+    balanceClienteActual = 0;
+    return cantidadDeDineroADevolver;
     } 
 }
